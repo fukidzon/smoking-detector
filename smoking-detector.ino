@@ -156,8 +156,8 @@ void loop() {
       char filename [13];
       // filename in format YEARMMDD
       sprintf (filename, "%04u%02u%02u.csv", current_time.year(), current_time.month(), current_time.day());
-      // bytes needed: 7-cas ; 4-p25 ; 4 p10 ; 1-status ; message (15sOK,10min,false,smoke) ; 3 pocet alarmov; 3 pocet false = 34
-      char dataString [34];
+      // bytes needed: 7-cas ; 5-p25 ; 5 p10 ; 1-status ; message (15sOK,10min,false,smoke) ; 3 pocet alarmov; 3 pocet false = 36
+      char dataString [36];
       char message [6];
       sprintf(message,"OK");
        // first 60 seconds we just measure and save values
