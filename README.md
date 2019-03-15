@@ -1,11 +1,14 @@
 # Detector of cigarette smoke
 
+**This is like version 0.2 - it's still in developement! The smoking detection works but still needs more tuning!**
+
 Our neighbours smoke at the balcony and the smoke gets inside if we leave windows open. So I decided to build a smoking detector alarm based on PM values (only reasonable property of air I was able measure for this purpose). 
+
 Current prototype is based on Arduino board (tests are mare with Arduino UNO + SDshield with RTC) and SDS011 PM detector (+LEDs and piezo buzzer)
 
 ![First prototype](img/SDshield_prototype.jpg)
 
-## rules for detecting of smoking
+## Rules for detecting of smoking
 * if PM2.5 is 5 higher than a minute ago - smoking detected, last good value is saved (average of 10 values 1 minute ago)
 * one minute after smoking alarm starts we check if the PM2.5 value was exceeded by at elast 10 - otherwise we declare it a false alarm and reinitialize the array with current values
 * end of smoking alarm: after 15 minutes we stop the smoking status (we assume smoking doesn't last longer than 15min, just the air got naturally bad somehow)
@@ -19,6 +22,7 @@ Current prototype is based on Arduino board (tests are mare with Arduino UNO + S
 * SDlogger shield with RTC - 2€
 * cables, power supply (or just USB cable)
 * cover/box - something similar to [lufdaten.info sensor](https://luftdaten.info/en/construction-manual/) can be built
+
 Prices are from Aliexpress. Total price of the prototype parts was around 25€. 
  
 ## Further work
